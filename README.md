@@ -1,1 +1,1 @@
-# zzapcho.github.io
+# kr.zzapcho-server.com
