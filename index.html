@@ -27,7 +27,7 @@
 								<h1>Minecraft<br>
 								야생서버</h1>
 								<br>
-								<h4><span id="copyText">mc.krsugar.kro.kr</span><br>
+								<a span id="copyText">mc.krsugar.kro.kr</span></a><br>
 							</div>
 						</div>
 						<nav>
@@ -94,7 +94,7 @@
 				{ const textToCopy = this.innerText; // 클릭된 요소의 텍스트 가져오기
 			        // 클립보드에 복사
 			navigator.clipboard.writeText(textToCopy)
-			        .then(() => {alert('클립보드에 복사되었습니다: ' + textToCopy);})
+			        .then(() => {alert('복사되었습니다');})
             			.catch(err => {alert('복사에 실패했습니다.');
         		console.error('복사 실패: ', err);
             });
