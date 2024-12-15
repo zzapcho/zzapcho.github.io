@@ -15,7 +15,6 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<input type="text" value="mc.krsugar.kro.kr" id="server-ip">
 			<div id="wrapper">
 
 				<!-- Header -->
@@ -28,7 +27,7 @@
 								<h1>Minecraft<br>
 								야생서버</h1>
 								<br>
-								<h4><a href=# onclick="copy('server-ip')">mc.krsugar.kro.kr</a><br>
+								<h4><span id="copyText">mc.krsugar.kro.kr</span><br>
 							</div>
 						</div>
 						<nav>
@@ -88,6 +87,19 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+						
+			<script>
+			document.getElementById('copyText').addEventListener('click', function () 
+				{ const textToCopy = this.innerText; // 클릭된 요소의 텍스트 가져오기
+			        // 클립보드에 복사
+			navigator.clipboard.writeText(textToCopy)
+			        .then(() => {alert('클립보드에 복사되었습니다: ' + textToCopy);})
+            			.catch(err => {alert('복사에 실패했습니다.');
+        		console.error('복사 실패: ', err);
+            });
+    });
+		      </script>
 
 	</body>
 </html>
