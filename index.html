@@ -97,24 +97,25 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-						
 			<script>
-			document.getElementById('copyText').addEventListener('click', function () {
-	   		 const textToCopy = this.innerText; // 클릭된 요소의 텍스트 가져오기
-	  		  navigator.clipboard.writeText(textToCopy) // 클립보드에 복사
-	  			.then(() => { // 성공
-	   		         alert('복사되었습니다');
-				})
-	    			.catch(err => { // 실패
-	    		        alert('복사에 실패했습니다.');
-	    		        console.error('복사 실패: ', err);
-				});
-		}	);
-</script>
+			// 모든 클래스 copy-text 요소에 이벤트 추가
+document.querySelectorAll('.copy-text').forEach(element => {
+    element.addEventListener('click', function () {
+        // 클릭된 요소의 텍스트 가져오기
+        const textToCopy = this.textContent;
 
+        // 텍스트 복사 기능
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alert(`복사됨: ${textToCopy}`);
+            })
+            .catch(err => {
+                console.error('복사 실패:', err);
             });
     });
-		      </script>
+});
+</script>
+				
 
 	</body>
 </html>
